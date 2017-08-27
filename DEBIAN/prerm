@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installinit
+if [ -x "/etc/init.d/live-installer" ]; then
+	invoke-rc.d live-installer stop || exit $?
+fi
+# End automatically added section
+
+# Automatically added by dh_python2:
+if which pyclean >/dev/null 2>&1; then
+	pyclean -p live-installer 
+else
+	dpkg -L live-installer | grep \.py$ | while read file
+	do
+		rm -f "${file}"[co] >/dev/null
+  	done
+fi
+
+# End automatically added section

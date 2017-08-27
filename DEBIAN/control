@@ -1,0 +1,10 @@
+Package: live-installer
+Version: 2017.01.15
+Architecture: amd64
+Maintainer: Jefferson Rocha <lrcjefferson@gmail.com>
+Installed-Size: 1714
+Depends: python (>= 2.7), python (<< 3), python-gtk2, python-glade2, python-webkit, python-parted, parted, gparted, python-qt4, python-imaging, streamer, imagemagick, isoquery, desktop-file-utils, shared-mime-info, sysv-rc, menu, gdisk, iso-codes, locales, adduser
+Section: admin
+Priority: optional
+Description: Live Installer
+ A live installer

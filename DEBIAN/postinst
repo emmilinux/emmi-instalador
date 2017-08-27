@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+
+# Automatically added by dh_python2:
+if which pycompile >/dev/null 2>&1; then
+	pycompile -p live-installer /usr/lib/live-installer -V 2.7-
+fi
+
+# End automatically added section
+# Automatically added by dh_installinit
+if [ -x "/etc/init.d/live-installer" ]; then
+	update-rc.d live-installer defaults >/dev/null
+	invoke-rc.d live-installer start || exit $?
+fi
+# End automatically added section
+# Automatically added by dh_icons
+if which update-icon-caches >/dev/null 2>&1 ; then
+	update-icon-caches /usr/share/icons/live-installer.png /usr/share/icons/live-installer.xpm /usr/share/icons/emmi.png
+fi
+# End automatically added section
