@@ -380,10 +380,10 @@ class InstallerWindow:
         self.wTree.get_widget("label_pass_help").set_markup("<span fgcolor='#3C3C3C'><sub><i>%s</i></sub></span>" % _("Por favor digite sua senha duas vezes para garantir que está correta."))
         self.wTree.get_widget("label_hostname").set_markup("<b>%s</b>" % _("Hostname"))
         self.wTree.get_widget("label_hostname_help").set_markup("<span fgcolor='#3C3C3C'><sub><i>%s</i></sub></span>" % _("O nome do seu computador."))
-        self.wTree.get_widget("label_autologin").set_markup("<b>%s</b>" % _("Login automático"))
-        self.wTree.get_widget("label_autologin_help").set_markup("<span fgcolor='#3C3C3C'><sub><i>%s</i></sub></span>" % _("Se habilitado, a sessão irá iniciar automaticamente, sem passar pela tela de login."))
-        self.wTree.get_widget("checkbutton_autologin").set_label(_("Login automático"))
-        self.wTree.get_widget("checkbutton_autologin").connect("toggled", self.assign_autologin)
+        #self.wTree.get_widget("label_autologin").set_markup("<b>%s</b>" % _("Login automático"))
+        #self.wTree.get_widget("label_autologin_help").set_markup("<span fgcolor='#3C3C3C'><sub><i>%s</i></sub></span>" % _("Se habilitado, a sessão irá iniciar automaticamente, sem passar pela tela de login."))
+        #self.wTree.get_widget("checkbutton_autologin").set_label(_("Login automático"))
+        #self.wTree.get_widget("checkbutton_autologin").connect("toggled", self.assign_autologin)
                 
         self.wTree.get_widget("face_label").set_markup("<b>%s</b>" % _("Sua imagem"))
         self.wTree.get_widget("face_description").set_markup("<span fgcolor='#3C3C3C'><sub><i>%s</i></sub></span>" % _("Esta imagem representa sua conta de usuário."))
@@ -600,9 +600,9 @@ class InstallerWindow:
                 except:
                     pass # Best effort. Fails the first time as self.column1 doesn't exist yet.
 
-    def assign_autologin(self, checkbox, data=None):
-        self.setup.autologin = checkbox.get_active()
-        self.setup.print_setup()
+    #def assign_autologin(self, checkbox, data=None):
+    #    self.setup.autologin = checkbox.get_active()
+    #    self.setup.print_setup()
 
     def assign_grub_install(self, checkbox, grub_box, data=None):
         grub_box.set_sensitive(checkbox.get_active())
